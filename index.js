@@ -5,7 +5,7 @@ const inputName = document.querySelector(".form__name");
 const inputWasBorn = document.querySelector(".form__idade");
 const inputEmail = document.querySelector(".form__email");
 const inputPhone = document.querySelector(".form__phone");
-const inputCPF = document.querySelector(".form__cpf")
+const inputCPF = document.querySelector(".form__cpf");
 const checkValidation = document.querySelector(".form__checkbox");
 
 // seção do display
@@ -22,6 +22,12 @@ function createCard(cardName,cardCPF, cardEmail, cardAge, cardPhone) {
   template.querySelector(".card__phone").textContent = cardPhone;
 
   container.appendChild(template);
+
+  
+  const closeBtn = document.querySelector(".card__btn_remove");
+  closeBtn.addEventListener("click", removeCard);
+  
+
 }
 
 // função que calcula a idade a partir da data de nascimento
@@ -35,10 +41,36 @@ function calcAge(birthDate) {
     age--;
   }
 
+  if (age > 120 || age < 0){
+    return alert("Idade inválida! Por favor, verifique a data de nascimento.");
+  }
+
   return age;
 }
 
+function removeCard(event) {
+  const card = event.target.closest(".card");
+  if (card) {
+    card.remove();
+  }
+}
 
+// Máscara automática para CPF
+inputCPF.addEventListener("input", function (e) {
+  let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
+  value = value.slice(0, 11); // Limita a 11 dígitos
+
+  // Aplica a máscara correta: 000.000.000-00
+  if (value.length > 9) {
+    value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, "$1.$2.$3-$4");
+  } else if (value.length > 6) {
+    value = value.replace(/(\d{3})(\d{3})(\d{1,3})/, "$1.$2.$3");
+  } else if (value.length > 3) {
+    value = value.replace(/(\d{3})(\d{1,3})/, "$1.$2");
+  }
+
+  e.target.value = value;
+});
 
 // evento ao clicar no botão do formulário
 formBtn.addEventListener("click", () => {
@@ -59,7 +91,6 @@ formBtn.addEventListener("click", () => {
   }
 
   const age = calcAge(wasborn);
-  
 
   createCard(name, cpf,  email, age + " anos", phone);
 

@@ -54,7 +54,9 @@
 }
 
 .card__btn_remove{
-    padding: 12px;
+  align-self: flex-end;
+  margin-left: auto;
+  padding: 12px;
   font-size: 18px;
   background-color: #4a90e2;
   color: white;
@@ -71,13 +73,16 @@
 /* Container dos cards */
 .container {
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
   gap: 15px;
 }
 
 /* Cartão individual */
 .card {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   padding: 15px 20px;
   border-radius: 6px;

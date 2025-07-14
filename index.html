@@ -11,7 +11,6 @@
   <header>
     <nav>
       <h1>Cadastro de evento</h1>
-
     </nav>
   </header>
 
@@ -20,7 +19,7 @@
       <form class="formField" novalidate>
         <input class="form__name" type="text" placeholder="Nome" required />
         <input class="form__idade" type="date" placeholder="Nascimento" required />
-        <input class="form__cpf" type="number" placeholder="CPF" required />
+        <input class="form__cpf" type="text" placeholder="CPF" required />
         <input class="form__email" type="email" placeholder="E-mail" required />
         <input class="form__phone" type="number" placeholder="Phone Number" required />
         
@@ -32,12 +31,18 @@
         <button type="button" class="form__button">Confirmar</button>
       </form>
 
+      
+    </section>
+
+    <section>
       <div class="container"></div>
     </section>
   </main>
 
   <template id="card-template">
     <div class="card">
+      <button class="card__btn_remove">X</button>
+      <form class="card__form">
         <p>Nome:</p>
       <h3 class="card__name"></h3>
       <p>idade:</p>
@@ -48,8 +53,12 @@
       <h3 class="card__email"></h3>
         <p>Telefone:</p>
       <h3 class="card__phone"></h3>
+      
+      </form>
     </div>
-    <button class="card__btn_remove">Remover inscrição</button>
+    
+
+    
   </template>
 
   <script src="index.js"></script>
