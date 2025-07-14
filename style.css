@@ -1,0 +1,91 @@
+/* Container geral */
+.signin__container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Formulário */
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formField input[type="text"],
+.formField input[type="date"],
+.formField input[type="email"],
+.formField input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.formField input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* Checkbox e texto */
+.form__validation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Botão */
+.form__button {
+  padding: 12px;
+  font-size: 18px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card__btn_remove{
+    padding: 12px;
+  font-size: 18px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card__btn_remove:hover .form__button:hover {
+  background-color: #357ABD;
+}
+
+/* Container dos cards */
+.container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Cartão individual */
+.card {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}

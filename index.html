@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário e Cartões</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Cadastro de evento</h1>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="signin__container">
+      <form class="formField" novalidate>
+        <input class="form__name" type="text" placeholder="Nome" required />
+        <input class="form__idade" type="date" placeholder="Nascimento" required />
+        <input class="form__cpf" type="number" placeholder="CPF" required />
+        <input class="form__email" type="email" placeholder="E-mail" required />
+        <input class="form__phone" type="number" placeholder="Phone Number" required />
+        
+        <div class="form__validation">
+          <input class="form__checkbox" type="checkbox" id="confirmCheckbox" required />
+          <label for="confirmCheckbox">Confirmar validação de sua inscrição</label>
+        </div>
+
+        <button type="button" class="form__button">Confirmar</button>
+      </form>
+
+      <div class="container"></div>
+    </section>
+  </main>
+
+  <template id="card-template">
+    <div class="card">
+        <p>Nome:</p>
+      <h3 class="card__name"></h3>
+      <p>idade:</p>
+      <h3 class="card__idade"></h3>
+        <p>cpf:</p>
+      <h3 class="card__cpf"></h3>
+        <p>E-mail:</p>
+      <h3 class="card__email"></h3>
+        <p>Telefone:</p>
+      <h3 class="card__phone"></h3>
+    </div>
+    <button class="card__btn_remove">Remover inscrição</button>
+  </template>
+
+  <script src="index.js"></script>
+</body>
+</html>
